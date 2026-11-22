@@ -1,0 +1,260 @@
+/* Styles for the data ingestion page; colors come from tokens in index.css. */
+
+.ingest {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.ingest__header h1 {
+  margin: 0 0 6px;
+  font-size: 28px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.ingest__header p {
+  margin: 0 0 28px;
+  color: var(--muted);
+}
+
+.dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 56px 24px;
+  border: 1.5px dashed var(--border-strong);
+  border-radius: 14px;
+  background: var(--surface);
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.dropzone:hover,
+.dropzone--active {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.dropzone__icon {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 6px;
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.dropzone__title {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.dropzone__hint {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.dropzone__link {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.file {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.file__badge {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.file__meta {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.file__name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.file__details {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.file__actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.btn--primary:not(:disabled):hover {
+  filter: brightness(1.08);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+
+.btn--ghost:not(:disabled):hover {
+  background: var(--hover);
+}
+
+.alert {
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-top: 16px;
+}
+
+.card .alert {
+  margin-top: 0;
+}
+
+.alert--error {
+  background: var(--error-soft);
+  color: var(--error);
+}
+
+.alert--success {
+  background: var(--success-soft);
+  color: var(--success);
+}
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+}
+
+.tab {
+  font: inherit;
+  font-size: 14px;
+  padding: 8px 14px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tab--active {
+  color: var(--text);
+  border-bottom-color: var(--accent);
+  font-weight: 600;
+}
+
+.table-wrap {
+  overflow: auto;
+  max-height: 520px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+th,
+td {
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+  max-width: 280px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  background: var(--surface-raised);
+  font-weight: 600;
+}
+
+tbody tr:hover {
+  background: var(--hover);
+}
+
+.rownum {
+  color: var(--muted);
+  width: 1%;
+  font-variant-numeric: tabular-nums;
+}
+
+.muted {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .ingest {
+    padding: 32px 16px;
+  }
+
+  .file__actions {
+    width: 100%;
+  }
+
+  .file__actions .btn {
+    flex: 1;
+  }
+}

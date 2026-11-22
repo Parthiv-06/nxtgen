@@ -1,0 +1,54 @@
+/* Global base styles and color tokens, with a dark theme from the OS setting. */
+
+:root {
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --surface-raised: #f1f3f6;
+  --text: #1a1d23;
+  --muted: #646b78;
+  --border: #e3e6eb;
+  --border-strong: #c9ced6;
+  --hover: #f4f6f9;
+  --accent: #2f5bea;
+  --accent-soft: #edf2ff;
+  --on-accent: #ffffff;
+  --error: #b42318;
+  --error-soft: #fef0ef;
+  --success: #067647;
+  --success-soft: #ecfdf3;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111318;
+    --surface: #181b21;
+    --surface-raised: #20242c;
+    --text: #e8eaee;
+    --muted: #9aa1ad;
+    --border: #2a2f38;
+    --border-strong: #3b414c;
+    --hover: #1f232a;
+    --accent: #6d8dff;
+    --accent-soft: #1d2540;
+    --on-accent: #0d1020;
+    --error: #ff8a80;
+    --error-soft: #3a1d1b;
+    --success: #6ee7a8;
+    --success-soft: #16301f;
+    color-scheme: dark;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
