@@ -205,14 +205,14 @@
   border-radius: 10px;
 }
 
-table {
+.ingest table {
   width: 100%;
   border-collapse: collapse;
   font-size: 13px;
 }
 
-th,
-td {
+.ingest th,
+.ingest td {
   padding: 8px 12px;
   text-align: left;
   border-bottom: 1px solid var(--border);
@@ -222,14 +222,14 @@ td {
   text-overflow: ellipsis;
 }
 
-th {
+.ingest th {
   position: sticky;
   top: 0;
   background: var(--surface-raised);
   font-weight: 600;
 }
 
-tbody tr:hover {
+.ingest tbody tr:hover {
   background: var(--hover);
 }
 

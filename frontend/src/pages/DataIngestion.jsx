@@ -23,7 +23,7 @@ function formatCell(value) {
   return String(value);
 }
 
-export default function DataIngestion() {
+export default function DataIngestion({ onUploaded }) {
   const inputRef = useRef(null);
   const [file, setFile] = useState(null);
   const [sheets, setSheets] = useState([]);
@@ -73,8 +73,13 @@ export default function DataIngestion() {
     body.append("file", file);
     try {
       const res = await fetch("/api/ingest", { method: "POST", body });
-      if (!res.ok) throw new Error(`Server responded with ${res.status}`);
-      setUpload({ state: "done", message: `${file.name} uploaded successfully.` });
+      if (!res.ok) {
+        const detail = await res.json().catch(() => null);
+        throw new Error(detail?.detail || `Server responded with ${res.status}`);
+      }
+      const result = await res.json();
+      setUpload({ state: "done", message: `${file.name} uploaded: ${result.rows.toLocaleString()} rows.` });
+      onUploaded?.(result);
     } catch (err) {
       setUpload({ state: "error", message: `Upload failed: ${err.message}` });
     }

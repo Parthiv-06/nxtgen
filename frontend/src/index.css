@@ -1,4 +1,51 @@
 /* Global base styles and color tokens, with a dark theme from the OS setting. */
+/* Tailwind/shadcn tokens live in --color-*; the plain --bg/--muted/... set serves the ingestion page. */
+
+@import "tailwindcss";
+
+@theme {
+  --color-background: #ffffff;
+  --color-foreground: #09090b;
+  --color-card: #ffffff;
+  --color-card-foreground: #09090b;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #09090b;
+  --color-primary: #18181b;
+  --color-primary-foreground: #fafafa;
+  --color-secondary: #f4f4f5;
+  --color-secondary-foreground: #18181b;
+  --color-muted: #f4f4f5;
+  --color-muted-foreground: #71717a;
+  --color-accent: #f4f4f5;
+  --color-accent-foreground: #18181b;
+  --color-destructive: #dc2626;
+  --color-border: #e4e4e7;
+  --color-input: #e4e4e7;
+  --color-ring: #18181b;
+  --radius-lg: 0.625rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #0a0a0b;
+    --color-foreground: #fafafa;
+    --color-card: #141417;
+    --color-card-foreground: #fafafa;
+    --color-popover: #141417;
+    --color-popover-foreground: #fafafa;
+    --color-primary: #fafafa;
+    --color-primary-foreground: #18181b;
+    --color-secondary: #27272a;
+    --color-secondary-foreground: #fafafa;
+    --color-muted: #27272a;
+    --color-muted-foreground: #a1a1aa;
+    --color-accent: #27272a;
+    --color-accent-foreground: #fafafa;
+    --color-border: #27272a;
+    --color-input: #27272a;
+    --color-ring: #d4d4d8;
+  }
+}
 
 :root {
   --bg: #f6f7f9;
